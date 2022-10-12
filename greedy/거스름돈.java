@@ -4,18 +4,12 @@
 #     * 금액을 입력받은 후 우리나라 화폐종류별로 해당 갯수를 표기하는 프로그램입니다.
 #     * 예를들어, 125,520 원을 입력하면 화면에 이렇게 보이게 하면 됩니다.
 #     * 표시하고 10원미만은 절삭
-#           ##화폐교환###
-#       ******************************************************
-#          요청금액 : 126520 원
-#          5만원 : 2매
-#          1만원 : 2매
-#          5천원 : 1매
-#          1천원 : 1매
-#          5백원 : 1개
-#          백원 : 0개
-#          오십원 : 0개
-#          십원 : 2개
-#       ********************************************************
+        ### 출장비 지급표 ###
+      ********************************************************
+        이름 출장비 오만원 만원 오천원 천원 오백원 백원 오십원 십원
+      *********************************************************
+        엄철식 539620 10 3 1 4 1 1 0 2
+      *********************************************************
  */
 
 package greedy;
@@ -26,6 +20,8 @@ class 거스름돈 {
     public static void main(String[] args) {
         거스름돈 solution = new 거스름돈();
         Scanner scanner = new Scanner(System.in);
+        System.out.print("이름: ");
+        String name = scanner.next();
         System.out.print("요청금액: ");
         int money = scanner.nextInt();
         System.out.println(solution.solution(money));
@@ -33,8 +29,18 @@ class 거스름돈 {
     }
 
     String solution(int money) {
-        String title = "\n  ###거스름돈### ";
+        String title = "\n  ### 출장비 지급표 ### ";
         String astar = "**************************";
-        return String.format("%s\n%s\n  요청금액: %d\n%s", title,astar,money,astar);
+        int[]unit = {50000, 10000, 5000, 1000, 500, 100, 50, 10};
+        int mok = 0;
+        int nmg = 0;
+        String result = "";
+        for (int i=0;i<unit.length;i++) {
+            mok = money / unit[i];
+            nmg = money % unit[i];
+            money = nmg;
+            result += mok+"\t";
+        };
+        return String.format("%s\n%s\n  이름 출장비 오만원 만원 오천원 천원 오백원 백원 오십원 십원\n%s\n%s %d %s\n%s", title,astar,money,astar);
     }
 }
