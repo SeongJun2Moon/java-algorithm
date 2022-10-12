@@ -30,30 +30,35 @@ class 마지막날짜 {
         마지막날짜 solution = new 마지막날짜();
         Scanner scanner = new Scanner(System.in);
         System.out.print("연: ");
-        int years = scanner.nextInt();
+        int year = scanner.nextInt();
         System.out.print("월: ");
         int month = scanner.nextInt();
-        System.out.println(solution.solution(years, month));
+        System.out.println(solution.solution(year, month));
     }
 
-    String solution(int years, int month) {
+    String solution(int year, int month) {
         String astar = "*************";
         int lastDay = 0;
         switch(month){
-            case 1: break;
-            case 3: break;
-            case 5: break;
-            case 7: break;
-            case 8: break;
-            case 10: break;
-            case 12: break;
-            case 4: break;
-            case 6: break;
-            case 9: break;
-            case 11: break;
-            case 2: break;
+            case 1:case 3:case 5: case 7:case 8:case 10:case 12: lastDay = 31; break;
+            case 4:case 6:case 9:case 11: lastDay = 30; break;
+            case 2: lastDay = checkLeapYear(year); break;
             default: break;
         };
-        return String.format("%s\n년 월 일\n%s\n%d %d %d\n%s", astar,astar,years,month,lastDay,astar);
+        return String.format("%s\n년 월 일\n%s\n%d %d %d\n%s", astar,astar,year,month,lastDay,astar);
+    }
+
+    int checkLeapYear(int year) {
+        int lastDay = 0;
+        if (year % 400 == 0) {
+            lastDay = 29;
+        } else if (year % 100 == 0) {
+            lastDay = 28;
+        } else if (year % 4 == 0) {
+            lastDay = 29;
+        } else {
+            lastDay = 28;
+        }
+        return lastDay;
     }
 }
