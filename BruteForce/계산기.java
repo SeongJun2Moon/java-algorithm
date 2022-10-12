@@ -1,4 +1,4 @@
-package 수학;
+package BruteForce;
 import java.util.*;
 
 class Solution {
@@ -25,9 +25,5 @@ class Solution {
         else if(b.equals("%")){answer = a % c;}
         else{System.out.println("그런거 없음.");}
         return String.format("%s \n %d %s %d = %d", title,a,b,c,answer);
-    }
-
-    public char[] solution(int lan, int eng, int math) {
-        return null;
     }
 }

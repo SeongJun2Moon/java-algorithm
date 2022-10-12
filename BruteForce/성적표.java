@@ -19,9 +19,9 @@
 // ********************************
 // """
 
-package 수학;
+package BruteForce;
 
-import java.util.Scanner;
+import java.util.*;
 
 class 성적표 {
     public static void main(String[] args) {
