@@ -52,6 +52,7 @@ class 비만도 {
             biman = "저체중";
         }
         System.out.println(solution.solution(name,kg,cm,biman));
+        scanner.close();
     }
 
     String solution(String name, float kg, float cm, String biman) {

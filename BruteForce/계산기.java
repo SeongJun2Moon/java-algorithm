@@ -12,12 +12,12 @@ class Solution {
         System.out.print("두 번째 수: ");
         int c = scanner.nextInt();
         System.out.println(solution.solution(a,b,c));
+        scanner.close();
     }
 
     String solution(int a,String b,int c) {
         String title = "###계산기### ";
         int answer = 0;
-        String answer2 = "";
         if(b.equals("+")){answer = a + c;}
         else if(b.equals("-")){answer = a - c;}
         else if(b.equals("*")){answer = a * c;}

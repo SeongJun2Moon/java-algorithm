@@ -34,6 +34,7 @@ class 성적표 {
         System.out.print("수학: ");
         int math = scanner.nextInt();
         System.out.println(solution.solution(lan, eng, math));
+        scanner.close();
         
     }
 

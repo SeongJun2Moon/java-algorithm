@@ -34,6 +34,7 @@ class 마지막날짜 {
         System.out.print("월: ");
         int month = scanner.nextInt();
         System.out.println(solution.solution(year, month));
+        scanner.close();
     }
 
     String solution(int year, int month) {
