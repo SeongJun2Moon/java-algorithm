@@ -24,23 +24,25 @@ class 거스름돈 {
         String name = scanner.next();
         System.out.print("요청금액: ");
         int money = scanner.nextInt();
-        System.out.println(solution.solution(money));
+        System.out.println(solution.solution(name,money));
         scanner.close();
     }
 
-    String solution(int money) {
+    String solution(String name, int money) {
         String title = "\n  ### 출장비 지급표 ### ";
-        String astar = "**************************";
+        String astar = "******************************************************************************";
+        String header = "이름  출장비  오만원  만원  오천원  천원  오백원  백원  오십원  십원";
         int[]unit = {50000, 10000, 5000, 1000, 500, 100, 50, 10};
         int mok = 0;
         int nmg = 0;
         String result = "";
+        int money2 = money;
         for (int i=0;i<unit.length;i++) {
             mok = money / unit[i];
             nmg = money % unit[i];
             money = nmg;
             result += mok+"\t";
         };
-        return String.format("%s\n%s\n  이름 출장비 오만원 만원 오천원 천원 오백원 백원 오십원 십원\n%s\n%s %d %s\n%s", title,astar,money,astar);
+        return String.format("  %s\n%s\n%s\n%s\n%s %d%s\n%s", title,astar,header,astar,name,money2,result,astar);
     }
 }
