@@ -9,39 +9,34 @@ class 버블정렬 {
 
     void solution() {
         int[] arr = createArray();
-        int[] arr2 = bubbleSort(arr);
-        print(arr2);
+        arr = sortArray(arr);
+        printArray(arr);
     }
 
     int createRandomNumber() {
-        int randomNumber = (int)(Math.random()*100)+1;
-        return randomNumber;
+        return (int)(Math.random()*10)+1;
     }
 
     int[] createArray() {
         int[] arr = new int[10];
-        for (int i=0; i<arr.length; i++) {
+        for (int i=0;i<arr.length;i++) {
             arr[i] = createRandomNumber();
         }
         return arr;
     }
 
-    int[] bubbleSort(int[] arr) {
-        int[]arr2 = arr;
-        Arrays.sort(arr2);
-        return arr2;
-    }
-
-    void print(int[] arr){
-        String title = "### 랜덤숫자 ###";
-        String astar = "******************************";
-        String answer = "";
-        for (int i=0; i<arr.length; i++) {
-            answer += "랜덤숫자: "+arr[i]+"\n";
+    int[] sortArray(int[] arr) {
+        for (int i=0;i<arr.length;i++) {
+            
         }
-        String answer2 = String.format("%s\n%s\n%s%s", title,astar,answer,astar);
-        System.out.println(answer2);
     }
 
+    void printArray(int[] arr){
+        String answer = "";
+        for (int i=0;i<arr.length;i++) {
+            answer+=arr[i]+"\t";
+        }
+        System.out.println(answer);
+    }
 
 }
