@@ -20,8 +20,7 @@ class 버블정렬 {
     int[] createArray() {
         int[]arr = new int[10];
         for (int i=0;i<arr.length;i++) {
-            int temp = randomNumber();
-            arr[i] = temp;
+            arr[i] = randomNumber();
             for (int j=0;j<i;j++) {
                 if (arr[i] == arr[j]) {
                     i--;
@@ -32,8 +31,19 @@ class 버블정렬 {
     }
 
     int[] sortArray(int[] arr) {
-        return arr;
-    }
+            for (int i=0;i<arr.length;i++) {
+                for (int j=0;j<arr.length-1;j++) {
+                    if (arr[i]<arr[j]) {
+                        int t = arr[j];
+                        arr[j] = arr[i];
+                        arr[i] = t;
+                    }
+                    
+                }
+            }
+            return arr;
+        }
+        
 
     void printArray(int[] arr){
         String answer = "";
