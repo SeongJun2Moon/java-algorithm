@@ -22,7 +22,7 @@ class 버블정렬 {
         for (int i=0;i<arr.length;i++) {
             arr[i] = randomNumber();
             for (int j=0;j<i;j++) {
-                if (arr[i] == arr[j]) {
+                if (arr[i]==arr[j]) {
                     i--;
                 }
             }
@@ -31,26 +31,23 @@ class 버블정렬 {
     }
 
     int[] sortArray(int[] arr) {
-            for (int i=0;i<arr.length;i++) {
-                for (int j=0;j<arr.length-1;j++) {
-                    if (arr[i]<arr[j]) {
-                        int t = arr[j];
-                        arr[j] = arr[i];
-                        arr[i] = t;
-                    }
-                    
+        for (int i=0;i<arr.length;i++) {
+            for (int j=0;j<arr.length-1;j++) {
+                if (arr[j]>arr[j+1]) {
+                    int t = arr[j+1];
+                    arr[j+1] = arr[j];
+                    arr[j] = t;
                 }
             }
-            return arr;
         }
-        
+        return arr;
+    }
 
-    void printArray(int[] arr){
+    void printArray(int[] arr) {
         String answer = "";
-        for (int i=0;i<arr.length;i++) {
-            answer+=arr[i]+"\t";
+        for (int i=0; i<arr.length; i++) {
+            answer += arr[i]+"\t";
         }
         System.out.println(answer);
     }
-
 }
