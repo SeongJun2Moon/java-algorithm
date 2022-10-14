@@ -13,22 +13,26 @@ class 버블정렬 {
         printArray(arr);
     }
 
-    int createRandomNumber() {
+    int randomNumber() {
         return (int)(Math.random()*10)+1;
     }
 
     int[] createArray() {
-        int[] arr = new int[10];
+        int[]arr = new int[10];
         for (int i=0;i<arr.length;i++) {
-            arr[i] = createRandomNumber();
+            int temp = randomNumber();
+            arr[i] = temp;
+            for (int j=0;j<i;j++) {
+                if (arr[i] == arr[j]) {
+                    i--;
+                }
+            }
         }
         return arr;
     }
 
     int[] sortArray(int[] arr) {
-        for (int i=0;i<arr.length;i++) {
-            
-        }
+        return arr;
     }
 
     void printArray(int[] arr){
